@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Fruget Nugget Rakha</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Gambar -->
+  <div class="hero-image"></div>
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+  <div class="logo-brand">
+    <img src="Fruget Nugget Rakha.png" alt="Logo Toko">
+    <h1>FRUGET NUGGET RAKHA</h1>
+  </div>
+  
+  <div class="nav-right">
+    <!-- Tombol Hamburger khusus HP -->
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="Tentang.html">Tentang Kami</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+    <a href="keranjang.html" class="cart-container">
+      <img src="shopping-cart.svg" alt="Keranjang" class="cart-icon">
+      <span class="cart-badge" id="cart-count">0</span>
+    </a>
+  </div>
+</header>
+<section id="menu" class="menu-section">
+  <h2>MENU</h2>
+  <div class="menu-container">
+    <div class="menu-card">
+      <h3>Rasa Tiramisu</h3>
+      <img src="nuget coklat.png" alt="nugget Tiramisu" class="menu-img">
+      <p>Perpaduan rasa kopi lembut dan krim khas tiramisu menyatu dalam nugget apel, memberikan sensasi mewah dan elegan di setiap gigitan.</p>
+      <p class="price">Rp7.000 isi 6</p>
+      <button class="btn add-to-cart" data-item="Rasa Tiramisu" data-harga="7000">Beli</button>
+    </div>
+
+    <div class="menu-card">
+      <h3>Rasa Strawberry</h3>
+      <img src="nuget strawberry.png" alt="nuget Strawberry" class="menu-img">
+      <p>Rasa buah stroberi segar berpadu dengan nugget apel, memberikan sensasi asam manis menyegarkan.</p>
+      <p class="price">Rp7.000 isi 6</p>
+      <button class="btn add-to-cart" data-item="Rasa Strawberry" data-harga="7000">Beli</button>
+    </div>
+
+    <div class="menu-card">
+      <h3>Rasa Keju Susu</h3>
+      <img src="nuget keju susu.png" alt="nuget keju susu" class="menu-img">
+      <p>Rasa gurih keju berpadu manisnya susu menghasilkan sensasi creamy yang lembut di lidah.</p>
+      <p class="price">Rp7.000 isi 6</p>
+      <!---button class="btn soldout">SOLD OUT</button --->
+      <button class="btn add-to-cart" data-item="Rasa Keju Susu" data-harga="7000">Beli</button>
+    </div>
+  </div> <!-- tutup menu-container -->
+</section>
+<!-- Footer bawah -->
+ <footer class="footer">
+  <div class="footer-column">
+    <img src="Fruget Nugget Rakha.png" alt="Logo" class="footer-logo" />
+    <p class="footer-address">Pamulang, Tangerang Selatan, Banten</p>
+    <div class="footer-social">
+      <img src="instagram-logo-bold.svg" alt="Instagram" class="social-icon" />
+      <a href="https://www.instagram.com/frugetnuggetrakha" target="_blank">@frugetnuggetrakha</a>
+    </div>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  <p>&copy; 2025 Fruget Nugget Rakha. All rights reserved.</p>
+</div>
+<script>
+  function toggleMenu() {
+    const menu = document.querySelector("nav ul");
+    menu.classList.toggle("active");
+  }
+</script>
+     <!-- Script: Navbar sembunyi saat scroll -->
+  <script>
+  const navbar = document.getElementById('navbar');
+  let lastScrollTop = 0;
+
+  window.addEventListener('scroll', function () {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+      // Scroll ke bawah -> sembunyikan navbar
+      navbar.classList.remove('navbar-visible');
+      navbar.classList.add('navbar-hidden');
+    } else {
+      // Scroll ke atas -> tampilkan navbar
+      navbar.classList.remove('navbar-hidden');
+      navbar.classList.add('navbar-visible');
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  });
+
+  // Tampilkan navbar saat halaman pertama kali dibuka
+  window.addEventListener('DOMContentLoaded', () => {
+    navbar.classList.add('navbar-visible');
+  });
+</script>
+<script>
+  const badge = document.getElementById("cart-count");
+  const tombolBeli = document.querySelectorAll(".add-to-cart");
+
+  // Ambil jumlah dari localStorage jika ada
+  let jumlahKeranjang = parseInt(localStorage.getItem("jumlahKeranjang")) || 0;
+  badge.innerText = jumlahKeranjang;
+
+  tombolBeli.forEach(function (tombol) {
+    tombol.addEventListener("click", function () {
+      jumlahKeranjang++;
+      badge.innerText = jumlahKeranjang;
+      localStorage.setItem("jumlahKeranjang", jumlahKeranjang);
+
+      const produk = tombol.getAttribute("data-item") || "Produk";
+      const harga = parseInt(tombol.getAttribute("data-harga")) || 0;
+      let daftarProduk = JSON.parse(localStorage.getItem("keranjang")) || [];
+      daftarProduk.push({ nama: produk, harga: harga });
+      localStorage.setItem("keranjang", JSON.stringify(daftarProduk));
+    });
+  });
+</script>
+  </body>
+</html>

@@ -1,0 +1,836 @@
+/* gambar atas full*/
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Gambar latar belakang di belakang navbar */
+.hero-image {
+  background-image: url('Nugget.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  filter: brightness(0.6);
+  width: 100vw;  /* biar full lebar layar */
+}
+
+/* Gambar latar belakang di belakang navbar */
+.hero-image {
+  background-image: url('Nugget.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  filter: brightness(0.6);
+}
+
+.hero-image {
+  width: 100vw;             /* Gunakan full viewport */
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+}
+
+/* Navbar */
+.navbar {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* Background putih solid tanpa blur */
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  color: black;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Gambar latar belakang di belakang navbar */
+.hero-image {
+  background-image: url('Nugget.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  filter: brightness(0.6);
+}
+
+/* animasi */
+/* Navbar (sticky + animasi scroll) */
+#navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.6); /* atau ubah ke putih pekat */
+  backdrop-filter: blur(10px);          /* efek blur */
+  -webkit-backdrop-filter: blur(10px);  /* safari support */
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  z-index: 1000;
+}
+/* Sembunyikan navbar */
+.navbar-hidden {
+  transform: translate(-50%, -100%);
+  opacity: 0;
+}
+
+/* Tampilkan navbar dengan elegan */
+.navbar-visible {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+/* Logo + brand */
+.logo-brand {
+  display: flex;
+  align-items: center;
+}
+.logo-brand img {
+  height: 50px;
+  margin-right: 10px;
+}
+.logo-brand h1 {
+  margin: 0;
+  color: #e67e22;  /* Kuning oranye yang lebih kontras */
+  font-family: 'Arial', sans-serif; /* Font bersih dan profesional */
+}
+
+/* Menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+
+/* Gaya menu navbar */
+}
+nav ul li a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;  /* Hilangkan garis bawah */
+  letter-spacing: 0.5px;     /* Spasi antar huruf sedikit rapat */
+  font-weight: bold;
+  font-size: 20px;           /* Ukuran huruf kecil seperti "Daily Group" */
+  font-family: 'Arial', sans-serif; /* Font bersih dan profesional */
+  transition: color 0.3s ease;
+
+/* Warna muncul saat diarahkan kursor */
+}
+nav ul li a:hover {
+   color: rgb(255, 145, 0);
+  text-decoration: none; /* Tetap tanpa garis bawah */
+}
+
+/* Bagian Setengah (2 Kolom) */
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 50px 40px;
+  background: #fffaf0;
+}
+
+.about-image, .about-text {
+  flex: 1 1 300px;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 450px; /* batasi maksimal lebarnya */
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto; /* tengah otomatis */
+  align-items: center;
+}
+
+.about-text h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  font-family: 'Arial', sans-serif; /* Font bersih dan profesional */
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.7;
+  font-family: 'Arial', sans-serif; /* Font bersih dan profesional */
+}
+
+/* Section 3 Kolom */
+.flavor-section {
+  padding: 60px 30px;
+  background: #fffaf0;
+}
+
+.flavor-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.flavor-text {
+  flex: 1 1 400px;
+}
+
+.flavor-text ul {
+  list-style-type: disc; /* simbol bulat */
+  padding-left: 20px;
+}
+
+.flavor-text li {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  font-family: Arial, sans-serif;
+}
+
+.flavor-text strong {
+  font-size: 20px;
+  font-weight: bold;
+  color: #d35400;
+}
+
+.flavor-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.flavor-image img {
+  max-width: 75%;
+  height: auto;
+  border-radius: 12px;
+}
+/* Keranjang Belanja */
+.cart-container {
+  position: relative;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.cart-icon {
+  width: 28px;
+  height: auto;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: white;
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Keranjang Belanja */
+.cart-container {
+  position: relative;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.cart-icon {
+  width: 28px;
+  height: auto;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: white;
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Bagian Utama Footer */
+footer.footer {
+  background-color: #fffaf0;  /* warna latar ivory */
+  color: #000;                /* warna teks hitam */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;   /* posisi tengah */
+  gap: 20px;
+  padding: 50px 10%;
+  text-align: center;
+}
+
+/* Kolom Footer */
+.footer-column {
+  flex: 1;
+  max-width: 300px;
+  text-align: center;
+  font-family: 'Arial', sans-serif; /* Font bersih dan profesional */
+  margin: 0 auto; /* agar center dalam kolom */
+}
+
+/* Logo */
+.footer-logo {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+/* Alamat */
+.footer-address {
+  font-size: 14px;
+  color: #000000;
+  font-family: 'Arial', sans-serif; /* Font bersih dan profesional */
+  margin: 10px 0;
+}
+
+/* Sosial Media */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.footer-social img.social-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-social a {
+  color: #000000;
+  text-decoration: none;
+  font-family: 'Arial', sans-serif; /* Font bersih dan profesional */
+  font-size: 14px;
+}
+
+.footer-social a:hover {
+  color: #ff8c00; /* oranye gelap saat hover */
+}
+
+/* Bawah Footer */
+.footer-bottom {
+  width: 100%;                     /* penting agar lebar penuh */
+  text-align: center;
+  margin-top: 0;
+  padding: 15px 0;
+  font-size: 13px;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+/* Kontak Kami */
+.kontak-section {
+  padding: 60px 20px;
+  background-color: #fffaf0;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+.kontak-section h3 {
+  font-size: 26px;
+  margin-bottom: 40px;
+  color: #e67e22;
+  font-weight: bold;
+}
+
+/* Layout kontak 3 kolom */
+.kontak-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.kontak-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1 1 350px;
+}
+
+.kontak-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.kontak-card h3 {
+  font-size: 18px;
+  color: #e67e22;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.kontak-card p {
+  font-size: 15px;
+  color: #444;
+}
+
+.icon-kontak {
+  font-size: 28px;
+  color: #e67e22;
+  margin-bottom: 10px;
+}
+
+/* Map di sisi kanan */
+.maps-container {
+  flex: 2 1 500px;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* Menu html Kami */
+.menu-section {
+  padding: 50px 20px;
+  background: #fffaf0;
+  text-align: center;
+}
+
+.menu-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #d35400;
+  font-family: 'Arial', sans-serif; /* Font bersih dan profesional */
+}
+
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.menu-card {
+  background: #fff6f0;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  width: 280px;
+  transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+}
+
+.menu-card h3 {
+  color: #e67e22;
+  margin-bottom: 10px;
+  font-family: 'Arial', sans-serif; /* Font bersih dan profesional */
+}
+
+.menu-card p {
+  font-size: 15px;
+  color: #444;
+  font-family: 'Arial', sans-serif; /* Font bersih dan profesional */
+}
+
+.price {
+  font-weight: bold;
+  color: #e67e22;
+  font-size: 18px;
+  margin: 10px 0;
+  font-family: 'Arial', sans-serif; /* Font bersih dan profesional */
+}
+
+.btn {
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  font-family: 'Arial', sans-serif; /* Font bersih dan profesional */
+}
+
+.btn:hover {
+  background-color: #d35400;
+}
+
+.btn.soldout {
+  background-color: red;
+  margin-bottom: 10px;
+}
+
+.menu-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Section video agar full width dan rapi */
+.video {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fffaf0; /* bisa kamu ganti sesuai warna tema */
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Halaman Keranjang Belanja */
+.cart-section {
+  padding: 60px 20px;
+  background-color: #fffaf0;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.cart-section h2 {
+  font-size: 28px;
+  color: #d35400;
+  margin-bottom: 20px;
+}
+
+.cart-items {
+  margin-bottom: 30px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Tombol aksi di keranjang */
+.cart-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cart-actions .btn {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+/* Formulir Alamat */
+.form-section {
+  padding: 60px 20px;
+  background-color: #fffaf0;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.form-section h2 {
+  font-size: 28px;
+  color: #d35400;
+  margin-bottom: 30px;
+}
+
+.form-section form {
+  display: inline-block;
+  text-align: left;
+  max-width: 400px;
+  width: 100%;
+}
+
+.form-section input,
+.form-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Halaman Pembayaran Transfer */
+.payment-section {
+  padding: 60px 20px;
+  background-color: #fffaf0;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.payment-section h2 {
+  font-size: 28px;
+  color: #d35400;
+  margin-bottom: 20px;
+}
+
+.payment-section ul {
+  list-style: none;
+  padding: 0;
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.payment-section p {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.payment-section a {
+  color: #e67e22;
+  text-decoration: none;
+}
+
+.payment-section a:hover {
+  text-decoration: underline;
+}
+
+.payment-section a.btn {
+  text-decoration: none;
+  color: white;
+}
+
+.payment-section a.btn:hover {
+  text-decoration: none;
+  color: white;
+}
+
+
+/* Formulir Alamat */
+.form-section {
+  padding: 60px 20px;
+  background-color: #fffaf0;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.form-section h2 {
+  font-size: 28px;
+  color: #d35400;
+  margin-bottom: 30px;
+}
+
+.form-section form {
+  display: inline-block;
+  text-align: left;
+  max-width: 400px;
+  width: 100%;
+}
+
+.form-section label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #444;
+}
+
+.form-section input,
+.form-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+}
+
+.form-section button.btn {
+  margin-top: 10px;
+}
+
+/* Gaya Tombol Umum */
+.btn {
+  background-color: #e67e22;  /* warna tombol */
+  color: white !important;    /* teks putih agar terlihat jelas */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #d35400;
+  text-decoration: none;
+  color: white !important; /* pastikan tetap putih saat hover */
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart-icon {
+  width: 28px;
+  height: auto;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: white;
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-right {
+    width: 100%;
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: auto;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+  nav ul li a {
+    width: 100%;
+    display: block;
+  }
+
+  /* Hero image lebih kecil */
+  .hero-image {
+    height: 200px;
+  }
+
+  /* Menu section (kartu nugget) jadi satu kolom */
+  .menu-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-card {
+    width: 90%;
+  }
+
+  /* About section jadi satu kolom */
+  .about-section {
+    flex-direction: column;
+  }
+
+  /* Kontak 3 kolom jadi 1 kolom */
+  .kontak-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .maps-container {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Footer */
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-column {
+    max-width: 100%;
+  }
+
+  /* Keranjang dan form juga responsif */
+  .cart-actions {
+    flex-direction: column;
+  }
+
+  .form-section form {
+    width: 100%;
+  }
+}
+
+/* Sembunyikan hamburger di desktop */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Tampilkan hamburger dan atur menu untuk HP */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    margin-left: auto;
+    color: #333;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    padding: 10px;
+    text-align: left;
+  }
+}

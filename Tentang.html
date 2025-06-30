@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kami - Fruget Nugget Rakha</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Gambar -->
+  <div class="hero-image"></div>
+  <!-- Navbar Sama -->
+  <header class="navbar" id="navbar">
+  <div class="logo-brand">
+    <img src="Fruget Nugget Rakha.png" alt="Logo Toko">
+    <h1>FRUGET NUGGET RAKHA</h1>
+  </div>
+
+  <div class="nav-right">
+    <!-- Tombol Hamburger khusus HP -->
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="Tentang.html">Tentang Kami</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+    <a href="keranjang.html" class="cart-container">
+      <img src="shopping-cart.svg" alt="Keranjang" class="cart-icon">
+      <span class="cart-badge" id="cart-count">0</span>
+    </a>
+  </div>
+</header>
+  <!-- Konten Tentang Kami -->
+  <section class="about-section">
+  <div class="about-image">
+    <img src="Nugget Coklat apel.png" alt="Tentang Nugget Buah Apel">
+  </div>
+  <div class="about-text">
+    <h2>Nugget Buah Apel</h2>
+    <p>Kami adalah pelopor camilan sehat dan inovatif berbahan dasar buah, dengan produk unggulan kami: Nugget Buah Apel. Kami percaya bahwa makanan sehat tidak harus membosankan. Dengan menggabungkan cita rasa alami buah apel dan sentuhan kreatif dalam proses pengolahan, kami menciptakan camilan renyah di luar, lembut dan manis alami di dalam.</p>
+    <p>Produk kami dibuat dari bahan-bahan pilihan, tanpa pengawet, dan cocok untuk semua usia—baik sebagai bekal, snack sehat, maupun suguhan spesial. Kami hadir untuk membawa alternatif baru di dunia kuliner, terutama bagi Anda yang mencari rasa, gizi, dan keunikan dalam satu gigitan.</p>
+    </ul>
+  </div>
+</section>
+<!-- Section: 3 Kolom seperti Lemonilo -->
+<section class="video">
+  <div Class = "video">
+    <video controls src = "Pitck Deck video Rakha.mp4">
+    </video>
+  </div>
+</section>
+<!-- Footer bawah -->
+ <footer class="footer">
+  <div class="footer-column">
+    <img src="Fruget Nugget Rakha.png" alt="Logo" class="footer-logo" />
+    <p class="footer-address">Pamulang, Tangerang Selatan, Banten</p>
+    <div class="footer-social">
+      <img src="instagram-logo-bold.svg" alt="Instagram" class="social-icon" />
+      <a href="https://www.instagram.com/frugetnuggetrakha" target="_blank">@frugetnuggetrakha</a>
+    </div>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  <p>&copy; 2025 Fruget Nugget Rakha. All rights reserved.</p>
+</div>
+<script>
+  function toggleMenu() {
+    const menu = document.querySelector("nav ul");
+    menu.classList.toggle("active");
+  }
+</script>
+    <!-- Script: Navbar sembunyi saat scroll -->
+<script>
+  const navbar = document.getElementById('navbar');
+  let lastScrollTop = 0;
+
+  window.addEventListener('scroll', function () {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+      // Scroll ke bawah -> sembunyikan navbar
+      navbar.classList.remove('navbar-visible');
+      navbar.classList.add('navbar-hidden');
+    } else {
+      // Scroll ke atas -> tampilkan navbar
+      navbar.classList.remove('navbar-hidden');
+      navbar.classList.add('navbar-visible');
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  });
+
+  // Tampilkan navbar saat halaman pertama kali dibuka
+  window.addEventListener('DOMContentLoaded', () => {
+    navbar.classList.add('navbar-visible');
+  });
+</script>
+<script>
+  // Ganti angka ini sesuai jumlah isi keranjang dinamis
+  let jumlahKeranjang = 0;
+  const badge = document.getElementById("cart-count");
+
+  const tombolBeli = document.querySelectorAll(".add-to-cart");
+
+  tombolBeli.forEach(function(tombol) {
+    tombol.addEventListener("click", function () {
+      jumlahKeranjang++;
+      badge.innerText = jumlahKeranjang;
+    });
+  });
+</script>
+</body>
+</html>

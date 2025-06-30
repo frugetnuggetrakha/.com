@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Keranjang Belanja</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section class="cart-section">
+  <h2>Keranjang Belanja</h2>
+  <ul id="daftar-produk" style="list-style: none; padding-left: 0;"></ul>
+  <div id="total-harga" style="margin-top: 10px; font-weight: bold;"></div>
+
+  <div class="cart-actions">
+    <a href="bayar-tanpa-alamat.html" class="btn" style="text-decoration: none;">Bayar Transfer Tanpa Kiriman</a>
+    <a href="bayar-kirim.html" class="btn" style="text-decoration: none;">Bayar Transfer Kirim ke Alamat</a>
+    <button class="btn" onclick="hapusKeranjang()">Batal Beli</button>
+    <a href="Menu.html" class="btn">Kembali ke Menu</a>
+  </div>
+</section>
+<!-- Footer bawah -->
+ <footer class="footer">
+  <div class="footer-column">
+    <img src="Fruget Nugget Rakha.png" alt="Logo" class="footer-logo" />
+    <p class="footer-address">Pamulang, Tangerang Selatan, Banten</p>
+    <div class="footer-social">
+      <img src="instagram-logo-bold.svg" alt="Instagram" class="social-icon" />
+      <a href="https://www.instagram.com/frugetnuggetrakha" target="_blank">@frugetnuggetrakha</a>
+    </div>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  <p>&copy; 2025 Fruget Nugget Rakha. All rights reserved.</p>
+</div>
+<script>
+  // Ambil data keranjang dari localStorage
+  const daftarProduk = JSON.parse(localStorage.getItem("keranjang")) || [];
+  const listEl = document.getElementById("daftar-produk");
+  const totalEl = document.getElementById("total-harga");
+
+  let total = 0;
+
+  // Tampilkan produk
+  listEl.innerHTML = daftarProduk.map(p => {
+    total += p.harga;
+    return `<li>${p.nama} : Rp${p.harga.toLocaleString()} isi 6</li>`;
+  }).join("");
+
+  // Tampilkan total harga
+  totalEl.innerText = `Total: Rp${total.toLocaleString()}`;
+
+  // Fungsi hapus keranjang
+  function hapusKeranjang() {
+    localStorage.removeItem("keranjang");
+    localStorage.removeItem("jumlahKeranjang");
+
+    // Kosongkan tampilan
+    listEl.innerHTML = "";
+    totalEl.innerText = "Total: Rp0";
+    
+    // Kalau badge di pojok kanan atas ada, kosongkan juga
+    const badge = document.getElementById("cart-count");
+    if (badge) badge.innerText = "0";
+  }
+</script>
+</body>
+</html>

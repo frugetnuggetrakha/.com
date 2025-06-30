@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Bayar Transfer Kirim ke Alamat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="form-section">
+    <h2>Formulir Alamat Pengiriman</h2>
+    <form action="#">
+  <label>Nama Lengkap</label>
+  <input type="text" id="nama" required>
+
+  <label>Nomor WhatsApp</label>
+  <input type="tel" id="nomor" required>
+
+  <label>Alamat Lengkap</label>
+  <textarea rows="4" id="alamat" required></textarea>
+
+  <p><strong>Total belanja harap ditransfer ke rekening:</strong></p>
+  <ul>
+    <li>Bank: BCA</li>
+    <li>No Rekening: hubungi wa</li>
+    <li>Gopay : 08158772656 / RAKHA MAHARDIKA ALAM</li>
+  </ul>
+
+  <p>Setelah transfer, kirim bukti pembayaran ke WhatsApp dan kami akan kirimkan pesanan Anda.</p>
+
+  <button type="button" class="btn" onclick="kirimWhatsApp()">Kirim</button>
+  <a href="keranjang.html" class="btn">Kembali ke keranjang</a>
+</form>
+  </section>
+  <!-- Footer bawah -->
+ <footer class="footer">
+  <div class="footer-column">
+    <img src="Fruget Nugget Rakha.png" alt="Logo" class="footer-logo" />
+    <p class="footer-address">Pamulang, Tangerang Selatan, Banten</p>
+    <div class="footer-social">
+      <img src="instagram-logo-bold.svg" alt="Instagram" class="social-icon" />
+      <a href="https://www.instagram.com/frugetnuggetrakha" target="_blank">@frugetnuggetrakha</a>
+    </div>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  <p>&copy; 2025 Fruget Nugget Rakha. All rights reserved.</p>
+</div>
+<script>
+function kirimWhatsApp() {
+  const nama = document.getElementById("nama").value;
+  const nomor = document.getElementById("nomor").value;
+  const alamat = document.getElementById("alamat").value;
+
+  const pesan = `Halo, saya ingin order nugget:\n\nNama: ${nama}\nNomor WA: ${nomor}\nAlamat: ${alamat}\n\nSaya sudah transfer. Berikut bukti pembayaran.`;
+
+  const linkWA = `https://wa.me/628158772656?text=${encodeURIComponent(pesan)}`;
+  window.open(linkWA, "_blank");
+}
+</script>
+</body>
+</html>

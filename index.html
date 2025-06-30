@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fruget Nugget Rakha</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background Gambar -->
+  <div class="hero-image"></div>
+
+  <!-- Navbar Transparan -->
+  <header class="navbar" id="navbar">
+  <div class="logo-brand">
+    <img src="Fruget Nugget Rakha.png" alt="Logo Toko">
+    <h1>FRUGET NUGGET RAKHA</h1>
+  </div>
+  
+  <div class="nav-right">
+    <!-- Tombol Hamburger khusus HP -->
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="Tentang.html">Tentang Kami</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+    <a href="keranjang.html" class="cart-container">
+      <img src="shopping-cart.svg" alt="Keranjang" class="cart-icon">
+      <span class="cart-badge" id="cart-count">0</span>
+    </a>
+  </div>
+</header>
+   <!-- Bagian Setengah (2 Kolom) -->
+<section class="about-section">
+  <div class="about-image">
+    <img src="Fruget Nugget Rakha.png" alt="Tentang Fruget">
+  </div>
+  <div class="about-text">
+    <h2>Fruget Nugget Rakha</h2>
+    <p>Fruget Nugget Rakha adalah camilan sehat inovatif yang dibuat dari buah apel segar dan diolah menjadi bentuk nugget dengan tekstur renyah di luar dan lembut di dalam. Meski menyerupai nugget daging, produk ini menghadirkan rasa manis alami apel yang unik dan menyenangkan. Camilan ini cocok untuk anak-anak, remaja, hingga orang dewasa sebagai alternatif jajanan sehat tanpa bahan pengawet, bebas MSG, dan tanpa lemak hewani. Kaya akan serat dan antioksidan dari apel asli, nugget ini juga praktis untuk dikonsumsi kapan saja, baik digoreng maupun dipanggang.</p>
+    <p>Menggunakan teknologi pembekuan cepat untuk menjaga nutrisi, ditambah lapisan tepung ringan yang gurih, Nugget Apel menawarkan pengalaman makan buah yang baru dan menyenangkan. Produk ini juga bisa divariasikan dengan topping seperti kayu manis, madu, atau keju. Warna dan rasa seluruhnya berasal dari bahan alami tanpa pewarna buatan. Tujuan utama dari produk ini adalah menghadirkan alternatif camilan buah yang sehat dan inovatif, yang membantu meningkatkan konsumsi buah sejak dini. Dengan demikian, Nugget Apel tidak hanya mendukung gaya hidup sehat, tetapi juga memberikan dampak positif bagi pertanian lokal dan masyarakat yang ingin mengurangi asupan camilan tinggi gula.</p>
+    </ul>
+  </div>
+</section>
+ <!-- Section: 3 Kolom seperti Lemonilo -->
+<section class="flavor-section">
+  <div class="flavor-content">
+    <div class="flavor-text">
+      <ul>
+        <li>
+          <strong>Rasa Tiramisu</strong><br>
+          Perpaduan rasa kopi dan krim tiramisu yang lembut dengan manis alami apel menciptakan sensasi elegan dan menggoda selera.
+        </li>
+        <li>
+          <strong>Rasa Strawberry</strong><br>
+          Rasa buah stroberi segar berpadu dengan nugget apel, memberikan rasa asam manis menyegarkan.
+        </li>
+        <li>
+          <strong>Rasa Keju Susu</strong><br>
+          Nikmat gurih keju berpadu manisnya susu, menghasilkan rasa creamy yang lembut di lidah.
+        </li>
+      </ul>
+    </div>
+    <div class="flavor-image">
+      <img src="Nugget apel rasa.png" alt="Nugget apel rasa" />
+    </div>
+  </div>
+</section>
+<!-- Footer bawah -->
+ <footer class="footer">
+  <div class="footer-column">
+    <img src="Fruget Nugget Rakha.png" alt="Logo" class="footer-logo" />
+    <p class="footer-address">Pamulang, Tangerang Selatan, Banten</p>
+    <div class="footer-social">
+      <img src="instagram-logo-bold.svg" alt="Instagram" class="social-icon" />
+      <a href="https://www.instagram.com/frugetnuggetrakha" target="_blank">@frugetnuggetrakha</a>
+    </div>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  <p>&copy; 2025 Fruget Nugget Rakha. All rights reserved.</p>
+</div>
+<script>
+  function toggleMenu() {
+    const menu = document.querySelector("nav ul");
+    menu.classList.toggle("active");
+  }
+</script>
+    <!-- Script: Navbar sembunyi saat scroll -->
+<script>
+  const navbar = document.getElementById('navbar');
+  let lastScrollTop = 0;
+
+  window.addEventListener('scroll', function () {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+      // Scroll ke bawah -> sembunyikan navbar
+      navbar.classList.remove('navbar-visible');
+      navbar.classList.add('navbar-hidden');
+    } else {
+      // Scroll ke atas -> tampilkan navbar
+      navbar.classList.remove('navbar-hidden');
+      navbar.classList.add('navbar-visible');
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  });
+
+  // Tampilkan navbar saat halaman pertama kali dibuka
+  window.addEventListener('DOMContentLoaded', () => {
+    navbar.classList.add('navbar-visible');
+  });
+</script>
+<script>
+  const badge = document.getElementById("cart-count");
+  const tombolBeli = document.querySelectorAll(".add-to-cart");
+
+  // Ambil jumlah dari localStorage jika ada
+  let jumlahKeranjang = parseInt(localStorage.getItem("jumlahKeranjang")) || 0;
+  badge.innerText = jumlahKeranjang;
+
+  tombolBeli.forEach(function (tombol) {
+    tombol.addEventListener("click", function () {
+      jumlahKeranjang++;
+      badge.innerText = jumlahKeranjang;
+      localStorage.setItem("jumlahKeranjang", jumlahKeranjang);
+
+      const produk = tombol.getAttribute("data-item") || "Produk";
+      const harga = parseInt(tombol.getAttribute("data-harga")) || 0;
+      let daftarProduk = JSON.parse(localStorage.getItem("keranjang")) || [];
+      daftarProduk.push({ nama: produk, harga: harga });
+      localStorage.setItem("keranjang", JSON.stringify(daftarProduk));
+    });
+  });
+</script>
+</body>
+</html>

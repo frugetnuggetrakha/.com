@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak Kami - Fruget Nugget Rakha</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <!-- Background Gambar -->
+  <div class="hero-image"></div>
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+  <div class="logo-brand">
+    <img src="Fruget Nugget Rakha.png" alt="Logo Toko">
+    <h1>FRUGET NUGGET RAKHA</h1>
+  </div>
+
+ <div class="nav-right">
+    <!-- Tombol Hamburger khusus HP -->
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="Tentang.html">Tentang Kami</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+    <a href="keranjang.html" class="cart-container">
+      <img src="shopping-cart.svg" alt="Keranjang" class="cart-icon">
+      <span class="cart-badge" id="cart-count">0</span>
+    </a>
+  </div>
+</header>
+  <!-- Konten Kontak -->
+  <section class="kontak-section">
+  <h3>Kontak</h3>
+  <div class="kontak-wrapper">
+    <div class="kontak-layout">
+      <div class="kontak-card">
+        <img src="map-pin-area-fill.svg" alt="Alamat" class="social-icon" />
+        <h3>Alamat :</h3>
+        <p>Pamulang Square Jl. Siliwangi No.7, Pamulang Barat, Tangerang Selatan, Banten 15417</p>
+      </div>
+      <div class="kontak-card">
+        <img src="envelope-fill.svg" alt="Email" class="social-icon" />
+        <h3>Email Kami:</h3>
+        <p>frugetnuggetrakha@gmail.com</p>
+      </div>
+      <div class="kontak-card">
+          <img src="whatsapp-logo-fill.svg" alt="Whatsapp" class="social-icon" />
+        <h3>Telepon Kami:</h3>
+        <p>08158772656</p>
+      </div>
+    </div>
+
+  <!-- Maps -->
+  <div class="maps-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.3952386278456!2d106.72218657370179!3d-6.342830262054697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef5bd347fd7b%3A0xa371ac3674880ed2!2sPamulang%20Square!5e0!3m2!1sid!2sid!4v1751071300329!5m2!1sid!2sid" 
+    width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+  </section>
+  <!-- Footer bawah -->
+ <footer class="footer">
+  <div class="footer-column">
+    <img src="Fruget Nugget Rakha.png" alt="Logo" class="footer-logo" />
+    <p class="footer-address">Pamulang, Tangerang Selatan, Banten</p>
+    <div class="footer-social">
+      <img src="instagram-logo-bold.svg" alt="Instagram" class="social-icon" />
+      <a href="https://www.instagram.com/frugetnuggetrakha" target="_blank">@frugetnuggetrakha</a>
+    </div>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  <p>&copy; 2025 Fruget Nugget Rakha. All rights reserved.</p>
+</div>
+<script>
+  function toggleMenu() {
+    const menu = document.querySelector("nav ul");
+    menu.classList.toggle("active");
+  }
+</script>
+     <!-- Script: Navbar sembunyi saat scroll -->
+  <script>
+  const navbar = document.getElementById('navbar');
+  let lastScrollTop = 0;
+
+  window.addEventListener('scroll', function () {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+      // Scroll ke bawah -> sembunyikan navbar
+      navbar.classList.remove('navbar-visible');
+      navbar.classList.add('navbar-hidden');
+    } else {
+      // Scroll ke atas -> tampilkan navbar
+      navbar.classList.remove('navbar-hidden');
+      navbar.classList.add('navbar-visible');
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  });
+
+  // Tampilkan navbar saat halaman pertama kali dibuka
+  window.addEventListener('DOMContentLoaded', () => {
+    navbar.classList.add('navbar-visible');
+  });
+</script>
+<script>
+  // Ganti angka ini sesuai jumlah isi keranjang dinamis
+  let jumlahKeranjang = 0;
+  const badge = document.getElementById("cart-count");
+
+  const tombolBeli = document.querySelectorAll(".add-to-cart");
+
+  tombolBeli.forEach(function(tombol) {
+    tombol.addEventListener("click", function () {
+      jumlahKeranjang++;
+      badge.innerText = jumlahKeranjang;
+    });
+  });
+</script>
+</body>
+</html>
